@@ -13,10 +13,10 @@
     <include
         android:id="@+id/layout_toolbar_main"
         layout="@layout/ui_toolbar_main"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_width="409dp"
+        android:layout_height="27dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- ========================================开始游戏栏======================================== -->
 

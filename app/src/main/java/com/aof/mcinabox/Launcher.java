@@ -1,7 +1,10 @@
 package com.aof.mcinabox;
 
+import android.os.Build;
 import android.os.FileUtils;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
 
 import com.aof.mcinabox.model.Account;
 import com.aof.mcinabox.model.ArgumentsSubstitutor;
@@ -16,6 +19,7 @@ import com.aof.mcinabox.network.model.OperatingSystem;
 import com.aof.mcinabox.network.model.Version;
 import com.aof.mcinabox.network.model.assets.AssetIndex;
 import com.aof.mcinabox.utils.UUIDTypeAdapter;
+import com.daasuu.bl.BuildConfig;
 import com.google.gson.Gson;
 
 import java.io.BufferedInputStream;
@@ -47,7 +51,8 @@ public class Launcher {
     private final int height;
     private final int width;
     private final Gson gson;
-
+    //private String zipPtath = "/storage/emulated/0/testunzip/test.zip";//压缩包路径
+    //private String unzipPath = "/storage/emulated/0/testunzip/";//解压路径
     public Launcher(MCinaBox mCinaBox, Version version, int height, int width) {
         this.gameDirectory = mCinaBox.getFileHelper().getGameDirectory();
         this.assetsDirectory = new File(this.gameDirectory, "assets");
@@ -56,6 +61,7 @@ public class Launcher {
         this.gson = new Gson();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     public void launchGame(Profile profile, Account account, AuthenticationResponse auth) {
         Log.i(TAG, "launchGame: Launching in " + gameDirectory);
 
@@ -109,6 +115,7 @@ public class Launcher {
         //performCleanups();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     private void unpackNatives(Version version, File targetDir) throws IOException {
         OperatingSystem os = OperatingSystem.LINUX;
         Collection<Library> libraries = version.getRelevantLibraries(new CurrentLaunchFeatureMatcher());
@@ -138,6 +145,7 @@ public class Launcher {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     private File reconstructAssets(Version version) throws IOException {
         File indexDir = new File(assetsDirectory, "indexes");
         File objectDir = new File(assetsDirectory, "objects");

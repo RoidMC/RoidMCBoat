@@ -49,10 +49,11 @@ public class AppManifest {
             "twitch-platform", "twitch-external-platform"};
 
     public static void initManifest(Context context, String mchome) {
-        APP_NAME = "MCinaBox";
+        APP_NAME = "RoidMCBoat";
         DATA_HOME = context.getFilesDir().getAbsolutePath();
         SDCARD_HOME = Environment.getExternalStorageDirectory().getAbsolutePath();
-        MCINABOX_HOME = Objects.requireNonNull(context.getExternalFilesDir("mcinabox")).getAbsolutePath();
+        //MCINABOX_HOME = Objects.requireNonNull(context.getExternalFilesDir("mcinabox")).getAbsolutePath();
+        MCINABOX_HOME = Objects.requireNonNull(context.getExternalFilesDir("roidmcboat")).getAbsolutePath();
         MCINABOX_TEMP = MCINABOX_HOME + "/temp";
         MCINABOX_KEYBOARD = MCINABOX_HOME + "/keyboards";
         MCINABOX_SETTING_JSON = MCINABOX_HOME + "/mcinabox.json";
