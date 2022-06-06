@@ -8,12 +8,12 @@ public class SettingJson {
     public final static String USER_TYPE_ONLINE = "online";
     public final static String USER_TYPE_EXTERNAL = "external";
 
-    public final static String DOWNLOAD_SOURCE_OFFICIAL = "官方源";
-    public final static String DOWNLOAD_SOURCE_BMCLAPI = "BMCL源";
-    public final static String DOWNLOAD_SOURCE_MCBBS = "MCBBS源";
+    public final static String DOWNLOAD_SOURCE_OFFICIAL = "official";
+    public final static String DOWNLOAD_SOURCE_BMCLAPI = "bmclapi";
+    public final static String DOWNLOAD_SOURCE_MCBBS = "mcbbs";
     public final static String[] DOWNLOAD_SOURCES = {DOWNLOAD_SOURCE_OFFICIAL, DOWNLOAD_SOURCE_BMCLAPI, DOWNLOAD_SOURCE_MCBBS};
 
-    public final static String DEFAULT_GAMEDIR = Environment.getExternalStorageDirectory().getPath() + "/RoidMCBoat/gamedir";
+    public final static String DEFAULT_GAMEDIR = Environment.getExternalStorageDirectory().getPath() + "/MCinaBox/gamedir";
 
     private String downloadType; //下载源
     private Configurations configurations; //全局游戏设置
